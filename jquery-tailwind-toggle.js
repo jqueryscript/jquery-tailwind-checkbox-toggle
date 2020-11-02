@@ -9,9 +9,9 @@ $(function(){
       var chBoxHandleColor = $(this).data('handle-color');
       chBoxHandleColor = (chBoxHandleColor !== undefined) ? chBoxHandleColor : 'bg-white';
       var chBoxOffColor = $(this).data('off-color');
-      chBoxOffColor = (chBoxOffColor !== undefined) ? chBoxOffColor : 'bg-grey';
+      chBoxOffColor = (chBoxOffColor !== undefined) ? chBoxOffColor : 'bg-gray-400';
       var chBoxOnColor = $(this).data('on-color');
-      chBoxOnColor = (chBoxOnColor !== undefined) ? chBoxOnColor : 'bg-blue-light';
+      chBoxOnColor = (chBoxOnColor !== undefined) ? chBoxOnColor : 'bg-blue-400';
       $(this)
         .attr('data-toggle', 'checkbox-toggle')
         .css({'width': (chBoxHandleSize * 2.5) + 6 +'px', 'padding': '3px', 'transition': 'all .25s'})
@@ -37,7 +37,7 @@ $(function(){
   $('[data-toggle="checkbox-toggle"]').attr('tabindex', '0').on('keydown', function(e){
     if(e.keyCode == 13 || e.keyCode == 32){
       e.preventDefault();
-      $(this).find('input').click();  
+      $(this).find('input').click();
     }
   });
 
