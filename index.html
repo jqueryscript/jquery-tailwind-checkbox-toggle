@@ -1,84 +1,41 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>jQuery Tailwind Checkbox Toggle</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-solarizedlight.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/tailwind.min.css" rel="stylesheet" />
-  <link href="https://pro.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-/pOR6TNYPdUaQQQRKQ4XHznZ4U2K/Lscb3u6jshUngC/31fLTuyX9FZb24gp4O3J" crossorigin="anonymous" rel="stylesheet" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>jQuery Tailwind Checkbox Toggle Plugin Examples</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.6/tailwind.min.css" rel="stylesheet" />
 
   <style>
     :not(pre)>code[class*=language-], pre[class*=language-] { background: rgba(0,0,0,0.25); }
   </style>
 
 </head>
-<body class="p-2 pt-16 bg-black text-grey leading-tight">
+<body class="p-2 pt-16 bg-gray-900 text-gray-100 leading-tight">
 
   <header class="mb-16 text-center">
-    <h1 class="mb-2 text-white font-light">Tailwind Checkbox Toggle</h1>
-    <p class="mb-8 opacity-50">Pure jQuery logic and TW <b class="opacity-75">(v.0.7.4)</b> syntax. Customizable with data attributes.</p>
-    <a href="https://github.com/craigerskine/jquery-tailwind-checkbox-toggle" class="px-px border border-grey-darker hover:border-white focus:border-white text-grey hover:text-white focus:text-white inline-flex items-center no-underline rounded">
-      <b class="px-2 text-lg"><i class="fab fa-fw fa-github"></i></b>
-      <b class="p-2 pl-0">Download/Fork</b>
-    </a>
+    <h1 class="mb-2 text-white font-light">jQuery Tailwind Checkbox Toggle Plugin Examples</h1>
+    <p class="mb-8 opacity-50">A tiny and fast jQuery plugin that helps developers create checkbox based on/off switches in the latest Tailwind CSS framework.</p>
   </header>
 
   <main>
-    <section class="mx-auto max-w-xs">
-      <h3 class="p-1 px-2 bg-grey-darkest uppercase opacity-25 rounded">Demo</h3>
+    <section class="mx-auto max-w-md">
+      <h3 class="p-1 px-2 bg-gray-900 uppercase opacity-25 rounded">Demo</h3>
       <ul class="list-reset mb-16">
         <li class="py-4 flex items-center"><label for="some-ch1" class="flex-1 cursor-pointer hover:text-white">Normal</label> <label class="ml-auto text-right" data-toggle="checkbox-toggle"><input type="checkbox" id="some-ch1" /></label></li>
         <li class="py-4 flex items-center"><label for="some-ch2" class="flex-1 cursor-pointer hover:text-white">Checked</label> <label class="ml-auto text-right" data-toggle="checkbox-toggle"><input type="checkbox" id="some-ch2" checked /></label></li>
-        <li class="py-4 flex items-center"><label for="some-ch3" class="flex-1 cursor-pointer hover:text-white">Styley</label> <label class="ml-auto text-right" data-toggle="checkbox-toggle" data-rounded="rounded-sm" data-handle-color="bg-red-lighter" data-off-color="bg-red-darker" data-on-color="bg-red"><input type="checkbox" id="some-ch3" /></label></li>
+        <li class="py-4 flex items-center"><label for="some-ch3" class="flex-1 cursor-pointer hover:text-white">Styley</label> <label class="ml-auto text-right" data-toggle="checkbox-toggle" data-rounded="rounded-sm" data-handle-color="bg-red-400" data-off-color="bg-red-900" data-on-color="bg-red-300"><input type="checkbox" id="some-ch3" /></label></li>
         <li class="py-4 flex items-center"><label for="some-ch4" class="flex-1 cursor-pointer hover:text-white">Disabled</label> <label class="ml-auto text-right" data-toggle="checkbox-toggle"><input type="checkbox" id="some-ch4" checked disabled /></label></li>
         <li class="py-4 flex items-center"><label for="some-ch5" class="flex-1 cursor-pointer hover:text-white">Smaller</label> <label class="ml-auto text-right" data-toggle="checkbox-toggle" data-handle-size="10"><input type="checkbox" id="some-ch5" /></label></li>
         <li class="py-4 flex items-center"><label for="some-ch6" class="flex-1 cursor-pointer hover:text-white">Small</label> <label class="ml-auto text-right" data-toggle="checkbox-toggle" data-handle-size="15"><input type="checkbox" id="some-ch6" /></label></li>
         <li class="py-4 flex items-center"><label for="some-ch7" class="flex-1 cursor-pointer hover:text-white">Bigger</label> <label class="ml-auto text-right" data-toggle="checkbox-toggle" data-handle-size="25"><input type="checkbox" id="some-ch7" /></label></li>
       </ul>
-      <h3 class="p-1 px-2 bg-grey-darkest uppercase flex items-center opacity-25 rounded">Options <small class="ml-2 py-px px-2 bg-black text-sm font-mono lowercase rounded-full">data-</small></h3>
-      <ul class="list-reset mb-16 font-mono">
-        <li class="py-4 flex items-center"><b>rounded</b> <small class="ml-auto text-right opacity-50">rounded[-none|-sm|-lg|-full] <small class="block opacity-75">default: rounded-full</small></small></li>
-        <li class="py-4 flex items-center"><b>handle-size</b> <small class="ml-auto text-right opacity-50"><i>int</i> <small class="block opacity-75">default: 20</small></small></li>
-        <li class="py-4 flex items-center"><b>handle-color</b> <small class="ml-auto text-right opacity-50">bg-[<i>color</i>] <small class="block opacity-75">default: bg-white</small></small></li>
-        <li class="py-4 flex items-center"><b>off-color</b> <small class="ml-auto text-right opacity-50">bg-[<i>color</i>] <small class="block opacity-75">default: bg-grey</small></small></li>
-        <li class="py-4 flex items-center"><b>on-color</b> <small class="ml-auto text-right opacity-50">bg-[<i>color</i>] <small class="block opacity-75">default: bg-blue-light</small></small></li>
-      </ul>
-      <h3 class="mb-4 p-1 px-2 bg-grey-darkest uppercase opacity-25 rounded">Usage</h3>
-      <h5 class="opacity-50">Markup</h5>
-      <p>Include a reference to jQuery and the jquery-tailwind-toggle.js file in this repo, preferrably right before the &lt;/body&gt;.</p>
-      <pre><code class="language-html">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;
-&lt;script src="jquery-tailwind-toggle.js"&gt;&lt;/script&gt;</code></pre>
-      <h5 class="opacity-50">Simple (default options)</h5>
-      <pre><code class="language-html">&lt;label data-toggle="checkbox-toggle"&gt;
-  &lt;input type="checkbox" /&gt;
-&lt;/label&gt;</code></pre>
-      <h5 class="opacity-50">All Options</h5>
-      <pre><code class="language-html">&lt;label
-  data-toggle="checkbox-toggle"
-  data-rounded="rounded"
-  data-handle-size="20"
-  data-handle-color="bg-white"
-  data-off-color="bg-grey"
-  data-on-color="bg-blue-light"&gt;
-  &lt;input type="checkbox" /&gt;
-&lt;/label&gt;</code></pre>
 
     </section>
   </main>
 
-  <footer class="p-4 pt-16 text-center text-sm font-bold">
-    <p class="opacity-75">Made with <svg xmlns="http://www.w3.org/2000/svg" class="text-red-light align-top" width="16" height="16" viewBox="0 0 16 16" role="img" aria-labelledby="foot-love"><title id="foot-love">Love</title><polygon class="fill-current" fill-rule="evenodd" points="8 6 11 3 15 7 8 14 1 7 5 3"></polygon></svg> by <a href="http://craigerskine.com/" class="text-grey-light hover:text-white focus:text-white no-underline">Craig Erskine</a></p>
-  </footer>
-
-  <!-- prism -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-markup.min.js"></script>
-  <!-- /prism -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="jquery-tailwind-toggle.js"></script>
 
 </body>
