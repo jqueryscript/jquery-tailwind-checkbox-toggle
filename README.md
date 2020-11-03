@@ -1,5 +1,6 @@
-# jquery-tailwind-checkbox-toggle
+# jQuery Tailwind Checkbox Toggle Plugin
 
-tailwind-checkbox-toggle
+A tiny and fast jQuery plugin that helps developers create checkbox based on/off switches in the latest Tailwind CSS framework.
 
-* [Demo & Docs](https://craigerskine.github.io/jquery-tailwind-checkbox-toggle/)
+* [Demo] (https://www.jqueryscript.net/demo/checkbox-switch-tailwind-css/)
+* [Documentation] (https://www.jqueryscript.net/form/checkbox-switch-tailwind-css.html)
